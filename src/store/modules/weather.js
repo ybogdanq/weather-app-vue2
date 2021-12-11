@@ -31,7 +31,8 @@ const weather = {
   },
   mutations: {
     [CHANGE_POST](state, userLoc) {
-      state.userPostCode = userLoc.components.postcode;
+      state.userPostCode =
+        userLoc.components.city || userLoc.components.postcode;
     },
     [CHANGE_WEATHER](state, weatherInfo) {
       state.weatherInfo = weatherInfo;
